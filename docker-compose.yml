@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    restart: always
+    command: --default-authentication-plugin=mysql_native_password --innodb-use-native-aio=0
+    environment:
+      MYSQL_DATABASE: "${DB_NAME}"
+      MYSQL_USER: "${DB_USER}"
+      MYSQL_ROOT_PASSWORD: "${DB_ROOT_PW}"
+      MYSQL_PASSWORD: "${DB_PW}"
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - ${PWD}/database/mount:/mnt
