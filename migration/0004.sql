@@ -34,3 +34,7 @@ ALTER TABLE `wads`
 	ON DELETE Restrict
 	ON UPDATE Cascade;
 -- -------------------------------------------------------------
+
+-- CHANGE "LENGTH" OF "FIELD "file_name" -----------------------
+ALTER TABLE `wads` MODIFY `file_name` VarChar( 10 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL COMMENT 'Filename used in doomworld.com/idgames';
+-- -------------------------------------------------------------
